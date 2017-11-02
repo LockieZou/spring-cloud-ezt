@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eztcn.user.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.eztcn.api.bean.User" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="eu_number" property="euNumber" jdbcType="VARCHAR" />
+        <result column="account" property="account" jdbcType="VARCHAR" />
+        <result column="eu_password" property="euPassword" jdbcType="VARCHAR" />
+        <result column="chinese_name" property="chineseName" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+        <result column="eu_mobile" property="euMobile" jdbcType="VARCHAR" />
+        <result column="eu_email" property="euEmail" jdbcType="VARCHAR" />
+        <result column="eu_nickName" property="euNickname" jdbcType="VARCHAR" />
+        <result column="id_number" property="idNumber" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="user_type" property="userType" jdbcType="INTEGER" />
+        <result column="login_type" property="loginType" jdbcType="INTEGER" />
+        <result column="role_id" property="roleId" jdbcType="INTEGER" />
+        <result column="register_type" property="registerType" jdbcType="INTEGER" />
+        <result column="hospital_id" property="hospitalId" jdbcType="INTEGER" />
+        <result column="birthday" property="birthday" jdbcType="DATE" />
+        <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
+        <result column="province" property="province" jdbcType="VARCHAR" />
+        <result column="city" property="city" jdbcType="VARCHAR" />
+        <result column="area" property="area" jdbcType="VARCHAR" />
+        <result column="register_plat_id" property="registerPlatId" jdbcType="VARCHAR" />
+        <result column="qq_number" property="qqNumber" jdbcType="VARCHAR" />
+        <result column="eu_qq" property="euQq" jdbcType="VARCHAR" />
+        <result column="weixin_number" property="weixinNumber" jdbcType="VARCHAR" />
+        <result column="en_weixin" property="enWeixin" jdbcType="VARCHAR" />
+        <result column="eu_alipay" property="euAlipay" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="eu_login_days" property="euLoginDays" jdbcType="INTEGER" />
+        <result column="eu_last_login_time" property="euLastLoginTime" jdbcType="TIMESTAMP" />
+        <result column="eu_message_set" property="euMessageSet" jdbcType="INTEGER" />
+        <result column="retry_pwd_nums" property="retryPwdNums" jdbcType="INTEGER" />
+        <result column="retry_pwd_time" property="retryPwdTime" jdbcType="TIMESTAMP" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="is_admin" property="isAdmin" jdbcType="INTEGER" />
+        <result column="created_by" property="createdBy" jdbcType="INTEGER" />
+        <result column="created_when" property="createdWhen" jdbcType="TIMESTAMP" />
+        <result column="updated_by" property="updatedBy" jdbcType="INTEGER" />
+        <result column="updated_when" property="updatedWhen" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, eu_number, account, eu_password, chinese_name, sex, eu_mobile, eu_email, eu_nickName,
+        id_number, status, user_type, login_type, role_id, register_type, hospital_id, birthday,
+        image_url, province, city, area, register_plat_id, qq_number, eu_qq, weixin_number,
+        en_weixin, eu_alipay, address, eu_login_days, eu_last_login_time, eu_message_set,
+        retry_pwd_nums, retry_pwd_time, description, is_admin, created_by, created_when,
+        updated_by, updated_when
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from s_users
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from s_users
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.eztcn.api.bean.User" >
+        insert into s_users (id, eu_number, account,
+        eu_password, chinese_name, sex,
+        eu_mobile, eu_email, eu_nickName,
+        id_number, status, user_type,
+        login_type, role_id, register_type,
+        hospital_id, birthday, image_url,
+        province, city, area,
+        register_plat_id, qq_number, eu_qq,
+        weixin_number, en_weixin, eu_alipay,
+        address, eu_login_days, eu_last_login_time,
+        eu_message_set, retry_pwd_nums, retry_pwd_time,
+        description, is_admin, created_by,
+        created_when, updated_by, updated_when
+        )
+        values (#{id,jdbcType=INTEGER}, #{euNumber,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR},
+        #{euPassword,jdbcType=VARCHAR}, #{chineseName,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER},
+        #{euMobile,jdbcType=VARCHAR}, #{euEmail,jdbcType=VARCHAR}, #{euNickname,jdbcType=VARCHAR},
+        #{idNumber,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{userType,jdbcType=INTEGER},
+        #{loginType,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{registerType,jdbcType=INTEGER},
+        #{hospitalId,jdbcType=INTEGER}, #{birthday,jdbcType=DATE}, #{imageUrl,jdbcType=VARCHAR},
+        #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR},
+        #{registerPlatId,jdbcType=VARCHAR}, #{qqNumber,jdbcType=VARCHAR}, #{euQq,jdbcType=VARCHAR},
+        #{weixinNumber,jdbcType=VARCHAR}, #{enWeixin,jdbcType=VARCHAR}, #{euAlipay,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR}, #{euLoginDays,jdbcType=INTEGER}, #{euLastLoginTime,jdbcType=TIMESTAMP},
+        #{euMessageSet,jdbcType=INTEGER}, #{retryPwdNums,jdbcType=INTEGER}, #{retryPwdTime,jdbcType=TIMESTAMP},
+        #{description,jdbcType=VARCHAR}, #{isAdmin,jdbcType=INTEGER}, #{createdBy,jdbcType=INTEGER},
+        #{createdWhen,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=INTEGER}, #{updatedWhen,jdbcType=TIMESTAMP}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.eztcn.api.bean.User" >
+        insert into s_users
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="euNumber != null" >
+                eu_number,
+            </if>
+            <if test="account != null" >
+                account,
+            </if>
+            <if test="euPassword != null" >
+                eu_password,
+            </if>
+            <if test="chineseName != null" >
+                chinese_name,
+            </if>
+            <if test="sex != null" >
+                sex,
+            </if>
+            <if test="euMobile != null" >
+                eu_mobile,
+            </if>
+            <if test="euEmail != null" >
+                eu_email,
+            </if>
+            <if test="euNickname != null" >
+                eu_nickName,
+            </if>
+            <if test="idNumber != null" >
+                id_number,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="userType != null" >
+                user_type,
+            </if>
+            <if test="loginType != null" >
+                login_type,
+            </if>
+            <if test="roleId != null" >
+                role_id,
+            </if>
+            <if test="registerType != null" >
+                register_type,
+            </if>
+            <if test="hospitalId != null" >
+                hospital_id,
+            </if>
+            <if test="birthday != null" >
+                birthday,
+            </if>
+            <if test="imageUrl != null" >
+                image_url,
+            </if>
+            <if test="province != null" >
+                province,
+            </if>
+            <if test="city != null" >
+                city,
+            </if>
+            <if test="area != null" >
+                area,
+            </if>
+            <if test="registerPlatId != null" >
+                register_plat_id,
+            </if>
+            <if test="qqNumber != null" >
+                qq_number,
+            </if>
+            <if test="euQq != null" >
+                eu_qq,
+            </if>
+            <if test="weixinNumber != null" >
+                weixin_number,
+            </if>
+            <if test="enWeixin != null" >
+                en_weixin,
+            </if>
+            <if test="euAlipay != null" >
+                eu_alipay,
+            </if>
+            <if test="address != null" >
+                address,
+            </if>
+            <if test="euLoginDays != null" >
+                eu_login_days,
+            </if>
+            <if test="euLastLoginTime != null" >
+                eu_last_login_time,
+            </if>
+            <if test="euMessageSet != null" >
+                eu_message_set,
+            </if>
+            <if test="retryPwdNums != null" >
+                retry_pwd_nums,
+            </if>
+            <if test="retryPwdTime != null" >
+                retry_pwd_time,
+            </if>
+            <if test="description != null" >
+                description,
+            </if>
+            <if test="isAdmin != null" >
+                is_admin,
+            </if>
+            <if test="createdBy != null" >
+                created_by,
+            </if>
+            <if test="createdWhen != null" >
+                created_when,
+            </if>
+            <if test="updatedBy != null" >
+                updated_by,
+            </if>
+            <if test="updatedWhen != null" >
+                updated_when,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="euNumber != null" >
+                #{euNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="account != null" >
+                #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="euPassword != null" >
+                #{euPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="chineseName != null" >
+                #{chineseName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="euMobile != null" >
+                #{euMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="euEmail != null" >
+                #{euEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="euNickname != null" >
+                #{euNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="idNumber != null" >
+                #{idNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="userType != null" >
+                #{userType,jdbcType=INTEGER},
+            </if>
+            <if test="loginType != null" >
+                #{loginType,jdbcType=INTEGER},
+            </if>
+            <if test="roleId != null" >
+                #{roleId,jdbcType=INTEGER},
+            </if>
+            <if test="registerType != null" >
+                #{registerType,jdbcType=INTEGER},
+            </if>
+            <if test="hospitalId != null" >
+                #{hospitalId,jdbcType=INTEGER},
+            </if>
+            <if test="birthday != null" >
+                #{birthday,jdbcType=DATE},
+            </if>
+            <if test="imageUrl != null" >
+                #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="area != null" >
+                #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="registerPlatId != null" >
+                #{registerPlatId,jdbcType=VARCHAR},
+            </if>
+            <if test="qqNumber != null" >
+                #{qqNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="euQq != null" >
+                #{euQq,jdbcType=VARCHAR},
+            </if>
+            <if test="weixinNumber != null" >
+                #{weixinNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="enWeixin != null" >
+                #{enWeixin,jdbcType=VARCHAR},
+            </if>
+            <if test="euAlipay != null" >
+                #{euAlipay,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null" >
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="euLoginDays != null" >
+                #{euLoginDays,jdbcType=INTEGER},
+            </if>
+            <if test="euLastLoginTime != null" >
+                #{euLastLoginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="euMessageSet != null" >
+                #{euMessageSet,jdbcType=INTEGER},
+            </if>
+            <if test="retryPwdNums != null" >
+                #{retryPwdNums,jdbcType=INTEGER},
+            </if>
+            <if test="retryPwdTime != null" >
+                #{retryPwdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null" >
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="isAdmin != null" >
+                #{isAdmin,jdbcType=INTEGER},
+            </if>
+            <if test="createdBy != null" >
+                #{createdBy,jdbcType=INTEGER},
+            </if>
+            <if test="createdWhen != null" >
+                #{createdWhen,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedBy != null" >
+                #{updatedBy,jdbcType=INTEGER},
+            </if>
+            <if test="updatedWhen != null" >
+                #{updatedWhen,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.eztcn.api.bean.User" >
+        update s_users
+        <set >
+            <if test="euNumber != null" >
+                eu_number = #{euNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="account != null" >
+                account = #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="euPassword != null" >
+                eu_password = #{euPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="chineseName != null" >
+                chinese_name = #{chineseName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null" >
+                sex = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="euMobile != null" >
+                eu_mobile = #{euMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="euEmail != null" >
+                eu_email = #{euEmail,jdbcType=VARCHAR},
+            </if>
+            <if test="euNickname != null" >
+                eu_nickName = #{euNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="idNumber != null" >
+                id_number = #{idNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="userType != null" >
+                user_type = #{userType,jdbcType=INTEGER},
+            </if>
+            <if test="loginType != null" >
+                login_type = #{loginType,jdbcType=INTEGER},
+            </if>
+            <if test="roleId != null" >
+                role_id = #{roleId,jdbcType=INTEGER},
+            </if>
+            <if test="registerType != null" >
+                register_type = #{registerType,jdbcType=INTEGER},
+            </if>
+            <if test="hospitalId != null" >
+                hospital_id = #{hospitalId,jdbcType=INTEGER},
+            </if>
+            <if test="birthday != null" >
+                birthday = #{birthday,jdbcType=DATE},
+            </if>
+            <if test="imageUrl != null" >
+                image_url = #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null" >
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="area != null" >
+                area = #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="registerPlatId != null" >
+                register_plat_id = #{registerPlatId,jdbcType=VARCHAR},
+            </if>
+            <if test="qqNumber != null" >
+                qq_number = #{qqNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="euQq != null" >
+                eu_qq = #{euQq,jdbcType=VARCHAR},
+            </if>
+            <if test="weixinNumber != null" >
+                weixin_number = #{weixinNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="enWeixin != null" >
+                en_weixin = #{enWeixin,jdbcType=VARCHAR},
+            </if>
+            <if test="euAlipay != null" >
+                eu_alipay = #{euAlipay,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null" >
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="euLoginDays != null" >
+                eu_login_days = #{euLoginDays,jdbcType=INTEGER},
+            </if>
+            <if test="euLastLoginTime != null" >
+                eu_last_login_time = #{euLastLoginTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="euMessageSet != null" >
+                eu_message_set = #{euMessageSet,jdbcType=INTEGER},
+            </if>
+            <if test="retryPwdNums != null" >
+                retry_pwd_nums = #{retryPwdNums,jdbcType=INTEGER},
+            </if>
+            <if test="retryPwdTime != null" >
+                retry_pwd_time = #{retryPwdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="description != null" >
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="isAdmin != null" >
+                is_admin = #{isAdmin,jdbcType=INTEGER},
+            </if>
+            <if test="createdBy != null" >
+                created_by = #{createdBy,jdbcType=INTEGER},
+            </if>
+            <if test="createdWhen != null" >
+                created_when = #{createdWhen,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedBy != null" >
+                updated_by = #{updatedBy,jdbcType=INTEGER},
+            </if>
+            <if test="updatedWhen != null" >
+                updated_when = #{updatedWhen,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.eztcn.api.bean.User" >
+        update s_users
+        set eu_number = #{euNumber,jdbcType=VARCHAR},
+        account = #{account,jdbcType=VARCHAR},
+        eu_password = #{euPassword,jdbcType=VARCHAR},
+        chinese_name = #{chineseName,jdbcType=VARCHAR},
+        sex = #{sex,jdbcType=INTEGER},
+        eu_mobile = #{euMobile,jdbcType=VARCHAR},
+        eu_email = #{euEmail,jdbcType=VARCHAR},
+        eu_nickName = #{euNickname,jdbcType=VARCHAR},
+        id_number = #{idNumber,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
+        user_type = #{userType,jdbcType=INTEGER},
+        login_type = #{loginType,jdbcType=INTEGER},
+        role_id = #{roleId,jdbcType=INTEGER},
+        register_type = #{registerType,jdbcType=INTEGER},
+        hospital_id = #{hospitalId,jdbcType=INTEGER},
+        birthday = #{birthday,jdbcType=DATE},
+        image_url = #{imageUrl,jdbcType=VARCHAR},
+        province = #{province,jdbcType=VARCHAR},
+        city = #{city,jdbcType=VARCHAR},
+        area = #{area,jdbcType=VARCHAR},
+        register_plat_id = #{registerPlatId,jdbcType=VARCHAR},
+        qq_number = #{qqNumber,jdbcType=VARCHAR},
+        eu_qq = #{euQq,jdbcType=VARCHAR},
+        weixin_number = #{weixinNumber,jdbcType=VARCHAR},
+        en_weixin = #{enWeixin,jdbcType=VARCHAR},
+        eu_alipay = #{euAlipay,jdbcType=VARCHAR},
+        address = #{address,jdbcType=VARCHAR},
+        eu_login_days = #{euLoginDays,jdbcType=INTEGER},
+        eu_last_login_time = #{euLastLoginTime,jdbcType=TIMESTAMP},
+        eu_message_set = #{euMessageSet,jdbcType=INTEGER},
+        retry_pwd_nums = #{retryPwdNums,jdbcType=INTEGER},
+        retry_pwd_time = #{retryPwdTime,jdbcType=TIMESTAMP},
+        description = #{description,jdbcType=VARCHAR},
+        is_admin = #{isAdmin,jdbcType=INTEGER},
+        created_by = #{createdBy,jdbcType=INTEGER},
+        created_when = #{createdWhen,jdbcType=TIMESTAMP},
+        updated_by = #{updatedBy,jdbcType=INTEGER},
+        updated_when = #{updatedWhen,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

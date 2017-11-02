@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eztcn.organization.mapper.HospitalMapper" >
+  <resultMap id="BaseResultMap" type="com.eztcn.api.bean.Hospital" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="short_name" property="shortName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="hospital_type" property="hospitalType" jdbcType="INTEGER" />
+    <result column="hospital_model" property="hospitalModel" jdbcType="INTEGER" />
+    <result column="fax" property="fax" jdbcType="VARCHAR" />
+    <result column="logo" property="logo" jdbcType="VARCHAR" />
+    <result column="zipcode" property="zipcode" jdbcType="VARCHAR" />
+    <result column="website" property="website" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="county" property="county" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="latitude" property="latitude" jdbcType="DOUBLE" />
+    <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="picture" property="picture" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="created_by" property="createdBy" jdbcType="INTEGER" />
+    <result column="created_when" property="createdWhen" jdbcType="TIMESTAMP" />
+    <result column="updated_by" property="updatedBy" jdbcType="INTEGER" />
+    <result column="updated_when" property="updatedWhen" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, short_name, type, level, hospital_type, hospital_model, fax, logo, zipcode, 
+    website, province, city, county, address, latitude, longitude, status, introduction, 
+    picture, delete_flag, created_by, created_when, updated_by, updated_when
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from i_hospital
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from i_hospital
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.eztcn.api.bean.Hospital" >
+    insert into i_hospital (id, name, short_name, 
+      type, level, hospital_type, 
+      hospital_model, fax, logo, 
+      zipcode, website, province, 
+      city, county, address, 
+      latitude, longitude, status, 
+      introduction, picture, delete_flag, 
+      created_by, created_when, updated_by, 
+      updated_when)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{shortName,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{level,jdbcType=INTEGER}, #{hospitalType,jdbcType=INTEGER}, 
+      #{hospitalModel,jdbcType=INTEGER}, #{fax,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{latitude,jdbcType=DOUBLE}, #{longitude,jdbcType=DOUBLE}, #{status,jdbcType=INTEGER}, 
+      #{introduction,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=INTEGER}, 
+      #{createdBy,jdbcType=INTEGER}, #{createdWhen,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=INTEGER}, 
+      #{updatedWhen,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.eztcn.api.bean.Hospital" >
+    insert into i_hospital
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="shortName != null" >
+        short_name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="hospitalType != null" >
+        hospital_type,
+      </if>
+      <if test="hospitalModel != null" >
+        hospital_model,
+      </if>
+      <if test="fax != null" >
+        fax,
+      </if>
+      <if test="logo != null" >
+        logo,
+      </if>
+      <if test="zipcode != null" >
+        zipcode,
+      </if>
+      <if test="website != null" >
+        website,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="county != null" >
+        county,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="picture != null" >
+        picture,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="createdWhen != null" >
+        created_when,
+      </if>
+      <if test="updatedBy != null" >
+        updated_by,
+      </if>
+      <if test="updatedWhen != null" >
+        updated_when,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null" >
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="hospitalType != null" >
+        #{hospitalType,jdbcType=INTEGER},
+      </if>
+      <if test="hospitalModel != null" >
+        #{hospitalModel,jdbcType=INTEGER},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=INTEGER},
+      </if>
+      <if test="createdWhen != null" >
+        #{createdWhen,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        #{updatedBy,jdbcType=INTEGER},
+      </if>
+      <if test="updatedWhen != null" >
+        #{updatedWhen,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eztcn.api.bean.Hospital" >
+    update i_hospital
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null" >
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="hospitalType != null" >
+        hospital_type = #{hospitalType,jdbcType=INTEGER},
+      </if>
+      <if test="hospitalModel != null" >
+        hospital_model = #{hospitalModel,jdbcType=INTEGER},
+      </if>
+      <if test="fax != null" >
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        zipcode = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        county = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag = #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createdBy != null" >
+        created_by = #{createdBy,jdbcType=INTEGER},
+      </if>
+      <if test="createdWhen != null" >
+        created_when = #{createdWhen,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null" >
+        updated_by = #{updatedBy,jdbcType=INTEGER},
+      </if>
+      <if test="updatedWhen != null" >
+        updated_when = #{updatedWhen,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eztcn.api.bean.Hospital" >
+    update i_hospital
+    set name = #{name,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      hospital_type = #{hospitalType,jdbcType=INTEGER},
+      hospital_model = #{hospitalModel,jdbcType=INTEGER},
+      fax = #{fax,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      zipcode = #{zipcode,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=DOUBLE},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      status = #{status,jdbcType=INTEGER},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      picture = #{picture,jdbcType=VARCHAR},
+      delete_flag = #{deleteFlag,jdbcType=INTEGER},
+      created_by = #{createdBy,jdbcType=INTEGER},
+      created_when = #{createdWhen,jdbcType=TIMESTAMP},
+      updated_by = #{updatedBy,jdbcType=INTEGER},
+      updated_when = #{updatedWhen,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="findByCondition" parameterType="com.eztcn.api.bean.Hospital" resultType="com.eztcn.api.bean.Hospital">
+    select
+    <include refid="Base_Column_List"></include>
+    from i_hospital h
+    where 1=1
+    <if test="id != null">
+      and h.id = #{id}
+    </if>
+    <if test="name != null and name != ''">
+      and h.name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="status != null">
+      and h.status = #{status,jdbcType=INTEGER}
+    </if>
+    <if test="type != null">
+      and h.type = #{type,jdbcType=INTEGER}
+    </if>
+    <if test="province != null and province != ''">
+      and h.province = #{province,jdbcType=VARCHAR}
+    </if>
+    <if test="city != null and city != ''">
+      and h.city = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="county != null and county != ''">
+      and h.county = #{county,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

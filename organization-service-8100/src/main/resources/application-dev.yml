@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/platformdb_clinic?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+
+
+#自定义参数
+organization:
+  company: ezt
+  ids: 1,2,3,4,5
+  provinceList:
+    - name: 广东省
+      value: 广州市
+    - name: 江西省
+      value: 南昌市
+  cityList:
+    - 北京市
+    - 上海市
+  map:
+    浙江省: 杭州市
+    湖南省: 长沙市

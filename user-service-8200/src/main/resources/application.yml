@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: user-service-8200
+  profiles:
+    active: dev
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/resources/**
+
+
+server:
+  port: 8200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+mybatis:
+  type-aliases-package: com.eztcn.api.bean
+  mapper-locations: classpath:com/eztcn/organization/mapper/*Mapper.xml
+
+

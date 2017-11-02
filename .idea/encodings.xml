@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/organization-service-8100" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-api-8000" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-config-8082" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-doc-server-8085" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-eureka-server-8080" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-kafka-8086" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-security-8084" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-zuul-8083" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service-8200" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

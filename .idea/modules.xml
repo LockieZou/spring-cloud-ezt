@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/organization-service-8100/organization-service-8100.iml" filepath="$PROJECT_DIR$/organization-service-8100/organization-service-8100.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-admin/spring-cloud-admin.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-admin/spring-cloud-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-api-8000/spring-cloud-api-8000.iml" filepath="$PROJECT_DIR$/spring-cloud-api-8000/spring-cloud-api-8000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-config-8082/spring-cloud-config-8082.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-config-8082/spring-cloud-config-8082.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-doc-server-8085/spring-cloud-doc-server-8085.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-doc-server-8085/spring-cloud-doc-server-8085.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-eureka-server-8080/spring-cloud-eureka-server-8080.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-eureka-server-8080/spring-cloud-eureka-server-8080.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-ezt.iml" filepath="$PROJECT_DIR$/spring-cloud-ezt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-kafka-8086/spring-cloud-kafka-8086.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-kafka-8086/spring-cloud-kafka-8086.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-security-8084/spring-cloud-security-8084.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-security-8084/spring-cloud-security-8084.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-server.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-server/spring-cloud-zuul-8083/spring-cloud-zuul-8083.iml" filepath="$PROJECT_DIR$/spring-cloud-server/spring-cloud-zuul-8083/spring-cloud-zuul-8083.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service-8200/user-service-8200.iml" filepath="$PROJECT_DIR$/user-service-8200/user-service-8200.iml" />
+    </modules>
+  </component>
+</project>

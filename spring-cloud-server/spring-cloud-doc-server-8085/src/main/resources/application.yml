@@ -1,0 +1,33 @@
+info:
+  component: 文档服务器
+
+spring:
+  profiles:
+    active: default
+  application:
+    name: doc-server-8085
+
+
+
+server:
+  port: 8085
+
+
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:8080/eureka/
+
+
+documentation:
+  #baseUrl: http://localhost:8085
+  swagger:
+    services:
+      -
+        name: 组织架构
+        url: /organization/v1/api-docs
+        version: 1.0
+      -
+        name: 账户管理
+        url: /user/v1/api-docs
+        version: 1.0

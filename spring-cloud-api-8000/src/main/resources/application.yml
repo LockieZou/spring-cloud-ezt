@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-cloud-api-8000
+  profiles:
+    active: dev
+
+server:
+  port: 8000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/

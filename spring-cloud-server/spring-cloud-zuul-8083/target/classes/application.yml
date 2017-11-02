@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: spring-cloud-zuul-8083
+  aop:
+    proxy-target-class: true
+  admin:
+    url: http://localhost:8081/
+  http:
+    multipart:
+      enabled: true
+      max-request-size: 100MB
+      max-file-size: 100MB
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+
+server:
+  port: 8083
+
+
+management:
+  security:
+    enabled: false
+
+
+zuul:
+  sensitive-headers:
+  routes:
+    organization-service-8100:
+      path: /organization/**
+      #serviceId: organization-service-8100
+      sensitive-headers:
+    user-service-8200:
+      path: /user/**
+      sensitive-headers:
+      #serviceId: user-service-8200
+      #stripPrefix: false #去掉前缀 直接映射到根  不然的话访问/user/user/oauth...
+      add-proxy-headers: true
+    doc-server-8085:
+      path: /**
+      #serviceId: doc-server-8085
+      sensitive-headers:
+
+
+
+
+
