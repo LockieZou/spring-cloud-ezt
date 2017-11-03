@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-cloud-admin-8081
+  boot:
+    admin:
+      url: http://localhost:8081
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .ftl
+  freemarker:
+    cache: false
+    request-context-attribute: request
+
+
+server:
+  port: 8081
+
+logging:
+  level:
+    tk:
+      mybatis: TRACE
