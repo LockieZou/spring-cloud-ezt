@@ -3,6 +3,8 @@ spring:
     active: dev
   application:
     name: organization-service-8100
+  zipkin:
+    base-url: http://localhost:8087
 
 
 

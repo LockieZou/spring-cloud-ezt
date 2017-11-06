@@ -7,6 +7,8 @@ spring:
     static-path-pattern: /**
   resources:
     static-locations: classpath:/resources/**
+  zipkin:
+      base-url: http://localhost:8087
 
 
 server:

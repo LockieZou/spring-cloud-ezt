@@ -16,11 +16,12 @@
 
     <modules>
         <module>spring-cloud-eureka-server-8080</module>
-        <module>spring-cloud-admin</module>
+        <module>spring-cloud-admin-8081</module>
         <module>spring-cloud-config-8082</module>
         <module>spring-cloud-zuul-8083</module>
         <module>spring-cloud-security-8084</module>
         <module>spring-cloud-doc-server-8085</module>
         <module>spring-cloud-kafka-8086</module>
+        <module>spring-cloud-sleuth-8087</module>
     </modules>
 </project>
