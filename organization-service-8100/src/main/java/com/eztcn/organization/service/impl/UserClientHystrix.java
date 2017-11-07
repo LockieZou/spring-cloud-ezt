@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @Author: zouxiliang
+ * @author: zouxiliang
  * @Description:
  * @Date: Created in 17:08 2017/10/24
  */

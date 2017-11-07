@@ -3,16 +3,30 @@ spring:
     name: user-service-8200
   profiles:
     active: dev
+  thymeleaf:
+    mode: HTML5
   mvc:
+    view:
+      prefix: /
+      suffix: .html
     static-path-pattern: /**
   resources:
-    static-locations: classpath:/resources/**
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/****/
   zipkin:
       base-url: http://localhost:8087
 
 
 server:
   port: 8200
+
+#关闭spring security功能security
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false
+
 
 eureka:
   client:

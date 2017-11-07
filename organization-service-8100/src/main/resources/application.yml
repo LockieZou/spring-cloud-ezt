@@ -3,8 +3,8 @@ spring:
     active: dev
   application:
     name: organization-service-8100
-  zipkin:
-    base-url: http://localhost:8087
+  #zipkin:
+    #base-url: http://localhost:8087
 
 
 
@@ -16,13 +16,21 @@ eureka:
 server:
   port: 8100
 
-feign:
-  hystrix:
-    enabled: true
+#关闭spring security功能
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false
+
 
 mybatis:
   type-aliases-package: com.eztcn.api.bean
   mapper-locations: classpath:com/eztcn/organization/mapper/*Mapper.xml
+
+
+
 
 
 

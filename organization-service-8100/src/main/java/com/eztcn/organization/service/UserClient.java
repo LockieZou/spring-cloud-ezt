@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @Author: zouxiliang
+ * @author: zouxiliang
  * @Description:
  * @Date: Created in 10:47 2017/10/24
  */

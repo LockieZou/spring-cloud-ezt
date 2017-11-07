@@ -25,7 +25,7 @@ import java.util.Map;
  */
 @Api(description = "所属机构",tags = "HospitalController",basePath = "/hospital")
 @RestController
-@RequestMapping("/hospital")
+@RequestMapping("/organization")
 @EnableConfigurationProperties(OrganizationProperties.class)
 public class HospitalController {
     @Resource
